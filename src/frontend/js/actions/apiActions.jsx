@@ -76,7 +76,7 @@ export const VERIFY_CLOUD_CONNECTION_FAILURE = '@@api/VERIFY_CLOUD_CONNECTION_FA
 
 export const listFiles = (side, data) => ({
     [RSAA]: {
-        endpoint: '/api/system/files/',
+        endpoint: '/api/system/files',
         method: 'POST',
         body: JSON.stringify(data),
         headers: withAuth({ 'Content-Type': 'application/json' }),
@@ -99,7 +99,7 @@ export const listFiles = (side, data) => ({
 
 export const listHomeFiles = (data) => ({
     [RSAA]: {
-        endpoint: '/api/system/files/home/',
+        endpoint: '/api/system/files/home',
         method: 'POST',
         headers: withAuth({ 'Content-Type': 'application/json' }),
         types: [
@@ -138,7 +138,7 @@ export const makeDirectory = (data) => {
 
 export const _makeDirectory = (data) => ({
     [RSAA]: {
-        endpoint: `/api/system/files/mkdir/`,
+        endpoint: `/api/system/files/mkdir`,
         method: 'POST',
         body: JSON.stringify(data),
         headers: withAuth({ 'Content-Type': 'application/json' }),
@@ -149,7 +149,7 @@ export const _makeDirectory = (data) => ({
 
 export const listCopyJobs = () => ({
     [RSAA]: {
-        endpoint: `/api/copy-jobs/`,
+        endpoint: `/api/copy-jobs`,
         method: 'GET',
         headers: withAuth({ 'Content-Type': 'application/json' }),
         types: [ LIST_COPY_JOBS_REQUEST, LIST_COPY_JOBS_SUCCESS, LIST_COPY_JOBS_FAILURE ],
@@ -194,7 +194,7 @@ export const createCopyJob = (data) => {
 
 const _createCopyJob = (data) => ({
     [RSAA]: {
-        endpoint: `/api/copy-jobs/`, // TODO: Why is there a trailing slash here?
+        endpoint: `/api/copy-jobs`,
         method: 'POST',
         body: JSON.stringify(data),
         headers: withAuth({ 'Content-Type': 'application/json' }),
@@ -204,7 +204,7 @@ const _createCopyJob = (data) => ({
 
 export const stopCopyJob = (id) => ({
     [RSAA]: {
-        endpoint: `/api/copy-jobs/${id}/stop/`, // TODO: Why is there a trailing slash here?
+        endpoint: `/api/copy-jobs/${id}/stop`,
         method: 'PUT',
         headers: withAuth({ 'Content-Type': 'application/json' }),
         types: [ STOP_COPY_JOB_REQUEST, STOP_COPY_JOB_SUCCESS, STOP_COPY_JOB_FAILURE ],
@@ -215,7 +215,7 @@ export const stopCopyJob = (id) => ({
 
 export const listHashsumJobs = () => ({
     [RSAA]: {
-        endpoint: `/api/hashsum-jobs/`,
+        endpoint: `/api/hashsum-jobs`,
         method: 'GET',
         headers: withAuth({ 'Content-Type': 'application/json' }),
         types: [ LIST_HASHSUM_JOBS_REQUEST, LIST_HASHSUM_JOBS_SUCCESS, LIST_HASHSUM_JOBS_FAILURE ],
@@ -240,7 +240,7 @@ export const createHashsumJob = (data) => {
 
 const _createHashsumJob = (data) => ({
     [RSAA]: {
-        endpoint: `/api/hashsum-jobs/`, // TODO: Why is there a trailing slash here?
+        endpoint: `/api/hashsum-jobs`,
         method: 'POST',
         body: JSON.stringify(data),
         headers: withAuth({ 'Content-Type': 'application/json' }),
@@ -250,7 +250,7 @@ const _createHashsumJob = (data) => ({
 
 export const stopHashsumJob = (id) => ({
     [RSAA]: {
-        endpoint: `/api/hashsum-jobs/${id}/stop/`, // TODO: Why is there a trailing slash here?
+        endpoint: `/api/hashsum-jobs/${id}/stop`,
         method: 'PUT',
         headers: withAuth({ 'Content-Type': 'application/json' }),
         types: [ STOP_HASHSUM_JOB_REQUEST, STOP_HASHSUM_JOB_SUCCESS, STOP_HASHSUM_JOB_FAILURE ],
@@ -259,7 +259,7 @@ export const stopHashsumJob = (id) => ({
 
 export const listCloudConnections = (data) => ({
     [RSAA]: {
-        endpoint: `/api/connections/`, // TODO: Why is there a trailing slash here?
+        endpoint: `/api/connections`,
         method: 'GET',
         headers: withAuth({ 'Content-Type': 'application/json' }),
         types: [ LIST_CLOUD_CONNECTIONS_REQUEST, LIST_CLOUD_CONNECTIONS_SUCCESS, LIST_CLOUD_CONNECTIONS_FAILURE ],
@@ -272,7 +272,7 @@ export const createCloudConnection = (data) => {
 
     return {
         [RSAA]: {
-            endpoint: `/api/connections/`, // TODO: Why is there a trailing slash here?
+            endpoint: `/api/connections`,
             method: 'POST',
             body: JSON.stringify(data),
             headers: withAuth({ 'Content-Type': 'application/json' }),
@@ -286,7 +286,7 @@ export const verifyCloudConnection = (data) => {
 
     return {
         [RSAA]: {
-            endpoint: `/api/connections/verify/`, // TODO: Why is there a trailing slash here?
+            endpoint: `/api/connections/verify`,
             method: 'POST',
             body: JSON.stringify(data),
             headers: withAuth({ 'Content-Type': 'application/json' }),
@@ -301,7 +301,7 @@ export const updateCloudConnection = (data) => {
 
     return {
         [RSAA]: {
-            endpoint: `/api/connections/${id}`, // TODO: Why is there a trailing slash here?
+            endpoint: `/api/connections/${id}`,
             method: 'PATCH',
             body: JSON.stringify(data),
             headers: withAuth({ 'Content-Type': 'application/json' }),
@@ -313,7 +313,7 @@ export const updateCloudConnection = (data) => {
 export const deleteCloudConnection = (data) => {
     return {
         [RSAA]: {
-            endpoint: `/api/connections/${data.id}`, // TODO: Why is there a trailing slash here?
+            endpoint: `/api/connections/${data.id}`,
             method: 'DELETE',
             headers: withAuth({ 'Content-Type': 'application/json' }),
             types: [ DELETE_CLOUD_CONNECTION_REQUEST, DELETE_CLOUD_CONNECTION_SUCCESS, DELETE_CLOUD_CONNECTION_FAILURE ],

@@ -16,7 +16,7 @@ export const LOGOUT_FAILURE = '@@auth/LOGOUT_FAILURE';
 
 export const login = (username, password) => ({
     [RSAA]: {
-        endpoint: '/api/auth/login/',
+        endpoint: '/api/auth/login',
         method: 'POST',
         body: JSON.stringify({username, password}),
         headers: { 'Content-Type': 'application/json' },
@@ -28,7 +28,7 @@ export const login = (username, password) => ({
 
 export const logout = (refresh_token) => ({
     [RSAA]: {
-        endpoint: '/api/auth/logout/',
+        endpoint: '/api/auth/logout',
         method: 'POST',
         headers: withRefresh({ 'Content-Type': 'application/json' }),
         types: [
@@ -40,7 +40,7 @@ export const logout = (refresh_token) => ({
 
 export const refreshAccessToken = (refresh_token) => ({
     [RSAA]: {
-        endpoint: '/api/auth/refresh/',
+        endpoint: '/api/auth/refresh',
         method: 'POST',
         headers: withRefresh({ 'Content-Type': 'application/json' }),
         types: [
