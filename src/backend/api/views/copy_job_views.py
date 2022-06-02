@@ -35,7 +35,7 @@ dto = api.model('copy-job', {
 })
 
 
-@api.route('/')
+@api.route('')
 class CopyJobList(Resource):
 
     @api.marshal_list_with(dto)
@@ -89,7 +89,7 @@ class CopyJob(Resource):
 
 
 
-@api.route('/<id>/stop/')
+@api.route('/<id>/stop')
 @api.param('id', 'The Copy Job Identifier')
 @api.response(404, 'Copy Job not found.')
 class CopyJob(Resource):

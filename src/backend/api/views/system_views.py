@@ -16,7 +16,7 @@ dto = api.model('system', {
 })
 
 
-@api.route('/files/')
+@api.route('/files')
 class SystemFiles(Resource):
     @api.expect(dto, validate=True)
     def post(self):
@@ -32,7 +32,7 @@ class SystemFiles(Resource):
             api.abort(500, str(e))
 
 
-@api.route('/files/home/')
+@api.route('/files/home')
 class SystemFilesHome(Resource):
     def post(self):
         """
@@ -47,7 +47,7 @@ class SystemFilesHome(Resource):
             api.abort(500, str(e))
 
 
-@api.route('/files/mkdir/')
+@api.route('/files/mkdir')
 class SystemFilesMkdir(Resource):
     @api.expect(dto, validate=True)
     def post(self):
@@ -64,7 +64,7 @@ class SystemFilesMkdir(Resource):
 
 
 
-@api.route('/uid/')
+@api.route('/uid')
 class SystemUid(Resource):
     def get(self):
         """
@@ -79,7 +79,7 @@ class SystemUid(Resource):
             api.abort(500, str(e))
 
 
-@api.route('/info/')
+@api.route('/info')
 class SystemUid(Resource):
     def get(self):
         """

@@ -14,6 +14,7 @@ db = SQLAlchemy()
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object(config_by_name['dev'])
+app.url_map.strict_slashes = False
 
 db.init_app(app)
 jwt = JWTManager(app)

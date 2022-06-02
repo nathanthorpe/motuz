@@ -36,7 +36,7 @@ dto = api.model('hashsum-job', {
 })
 
 
-@api.route('/')
+@api.route('')
 class HashsumJobList(Resource):
 
     @api.marshal_list_with(dto)
@@ -89,7 +89,7 @@ class HashsumJob(Resource):
 
 
 
-@api.route('/<id>/stop/')
+@api.route('/<id>/stop')
 @api.param('id', 'The Check Job Identifier')
 @api.response(404, 'Check Job not found.')
 class HashsumJob(Resource):

@@ -72,7 +72,7 @@ dto = api.model('connection', {
 })
 
 
-@api.route('/')
+@api.route('')
 class ConnectionList(Resource):
 
     @api.marshal_list_with(dto)
@@ -105,7 +105,7 @@ class ConnectionList(Resource):
 
 
 
-@api.route('/verify/')
+@api.route('/verify')
 class ConnectionVerify(Resource):
     @api.expect(dto, validate=True)
     def post(self):

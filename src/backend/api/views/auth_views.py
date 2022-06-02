@@ -16,7 +16,7 @@ dto = api.model('auth', {
 })
 
 
-@api.route('/login/')
+@api.route('/login')
 class UserLogin(Resource):
     @api.expect(dto, validate=True)
     def post(self):
@@ -30,7 +30,7 @@ class UserLogin(Resource):
             api.abort(500, str(e))
 
 
-@api.route('/refresh/')
+@api.route('/refresh')
 class TokenRefresh(Resource):
     def post(self):
         """Use JWT refresh token to retrienve a new JWT access token"""
@@ -44,7 +44,7 @@ class TokenRefresh(Resource):
 
 
 
-@api.route('/logout/')
+@api.route('/logout')
 class LogoutAPI(Resource):
     def post(self):
         """Logout and invalidate JWT token"""
